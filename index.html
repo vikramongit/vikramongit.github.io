@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Vikram Singh - Flutter & Android Developer Portfolio">
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <!-- External CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- FontAwesome Icons (Optional) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   
@@ -25,36 +25,36 @@
       </div>
       <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#profile" class="nav-item">Profile</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#experience" class="nav-item">Experience</a></li>
+        <li><a href="#education" class="nav-item">Education</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
       </ul>
     </nav>
   </header>
-
+  
   <!-- Home Section -->
-  <section id="home" class="hero-section">
+  <section id="home" class="section hero-section">
     <div class="hero-content">
       <h2>Welcome to My Portfolio</h2>
       <p>I'm Vikram – a passionate Flutter & Android Developer dedicated to creating impactful applications.</p>
     </div>
   </section>
-
+  
   <!-- Profile Section -->
-  <section id="profile" class="profile-section">
+  <section id="profile" class="section profile-section">
     <div class="profile-box">
       <img id="profile-photo" src="" alt="Profile Photo" class="profile-photo">
       <h2 id="profile-name" class="profile-name">Vikram Singh</h2>
       <p id="profile-bio" class="profile-bio">Loading bio...</p>
     </div>
   </section>
-
+  
   <!-- Skills Section -->
-  <section id="skills" class="skills-section">
+  <section id="skills" class="section skills-section">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
       <div class="skill-box">Kotlin</div>
@@ -65,49 +65,71 @@
       <div class="skill-box">Git</div>
     </div>
   </section>
-
+  
   <!-- Projects Section -->
-  <section id="projects" class="projects-section">
+  <section id="projects" class="section projects-section">
     <h2 class="section-title">Projects</h2>
-    <div id="projects-container" class="projects-container"></div>
+    <div id="projects-container" class="projects-container">
+      <!-- Project cards will be loaded dynamically -->
+    </div>
+    <!-- Fallback message if no projects load -->
+    <div id="project-error" class="error-message" style="display:none;">No projects available to display.</div>
   </section>
-
+  
   <!-- Experience Section -->
-  <section id="experience" class="experience-section">
+  <section id="experience" class="section experience-section">
     <h2 class="section-title">Experience</h2>
     <div class="experience-container">
+      <!-- Internship Experience -->
       <div class="experience-box">
-        <h3>Flutter Development Intern – Zetpeak Pvt Ltd</h3>
-        <span>Jul 2023 — Oct 2023</span>
-        <p>Engineered the ZingTix app, boosting user engagement by 30%.</p>
+        <h3 class="experience-title">Flutter Development Intern – Zetpeak Pvt Ltd</h3>
+        <span class="date">Jul 2023 — Oct 2023</span>
+        <ul class="experience-list">
+          <li>Engineered the ZingTix app, boosting user engagement by 30%.</li>
+          <li>Collaborated with 8 developers using Flutter & Firebase.</li>
+          <li>Conducted user testing to improve performance.</li>
+        </ul>
       </div>
+      <!-- Training Experience -->
       <div class="experience-box">
-        <h3>Android Development Training – Softpro India Pvt Ltd</h3>
-        <span>Jul 2020 — Aug 2020</span>
-        <p>Led the ApolloOne project, increasing grocery sales by 25%.</p>
+        <h3 class="experience-title">Training – Android Development, Softpro India Pvt Ltd</h3>
+        <span class="date">Jul 2020 — Aug 2020</span>
+        <ul class="experience-list">
+          <li>Spearheaded the ApolloOne project, increasing grocery sales by 25% for 200+ users.</li>
+          <li>Worked with Android, Kotlin, Firebase, JSON, and Git.</li>
+          <li>Led a team of 5 trainees to integrate secure payment gateways.</li>
+        </ul>
       </div>
     </div>
   </section>
-
+  
   <!-- Education Section -->
-  <section id="education" class="education-section">
+  <section id="education" class="section education-section">
     <h2 class="section-title">Education</h2>
     <div class="education-container">
+      <!-- Bachelor Education -->
       <div class="education-box">
-        <h3>B.Tech in Computer Science & AI & ML</h3>
-        <span>2021 — 2024</span>
-        <p>Khwaja Moinuddin Chishti Language University, Lucknow</p>
+        <h3 class="education-title">B.Tech in Computer Science & Engineering (AI & ML)</h3>
+        <span class="date">2021 — 2024</span>
+        <p>
+          Khwaja Moinuddin Chishti Language University, Lucknow, UP<br>
+          GPA: 7.1/10.00
+        </p>
       </div>
+      <!-- Diploma Education -->
       <div class="education-box">
-        <h3>Diploma in Computer Science & Engineering</h3>
-        <span>2018 — 2021</span>
-        <p>Sant Ravidas Government Polytechnic, Chakia</p>
+        <h3 class="education-title">Diploma in Computer Science & Engineering</h3>
+        <span class="date">2018 — 2021</span>
+        <p>
+          Sant Ravidas Government Polytechnic, Chakia, Chandauli, UP<br>
+          Percentage: 74.04%
+        </p>
       </div>
     </div>
   </section>
-
+  
   <!-- Contact Section -->
-  <section id="contact" class="contact-section">
+  <section id="contact" class="section contact-section">
     <h2 class="section-title">Contact</h2>
     <div class="contact-box">
       <p>Email: <a href="mailto:doworkvikram@gmail.com">doworkvikram@gmail.com</a></p>
@@ -121,12 +143,12 @@
       </p>
     </div>
   </section>
-
+  
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Vikram Singh. All Rights Reserved.</p>
   </footer>
-
+  
   <!-- External JavaScript -->
   <script src="assets/js/script.js"></script>
 </body>

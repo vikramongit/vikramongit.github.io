@@ -31,36 +31,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Render Projects with Banners
+  // Render Projects into the Projects Container using a stable placeholder image
   async function renderProjects() {
     const projects = await fetchProjects();
     const container = document.getElementById("projects-container");
-
-    // Map project names to corresponding images
-    const projectBanners = {
-      "ai-integrated-ludo-game": "assets/images/ai-integrated-ludo-game.png",
-      "gameoflife": "assets/images/GameOfLife.png",
-      "jokeapp": "assets/images/JokeApp.png",
-      "playchess": "assets/images/PlayChess.png",
-      "travel-companion": "assets/images/Travel-Companion.png",
-      "newsfeed": "assets/images/newsfeed.png",
-      "redactorve": "assets/images/RedactorVE.png"
-    };
-
-    projects.forEach(project => {
-      if (projectBanners[project.name.toLowerCase()]) {
+    
+    if (!projects.length) {
+      document.getElementById("project-error").style.display = "block";
+    } else {
+      projects.forEach(project => {
         const card = document.createElement("div");
         card.classList.add("project-card");
+        // Use a stable placeholder image from via.placeholder.com
+        const imageUrl = "https://via.placeholder.com/300x150.png?text=Project+Image";
         card.innerHTML = `
-          <img src="${projectBanners[project.name.toLowerCase()]}" alt="${project.name} Banner">
+          <img src="${imageUrl}" alt="Project Image" class="project-image">
           <h3>${project.name}</h3>
           <p>${project.description || "No description available."}</p>
-          <a href="${project.html_url}" target="_blank" class="project-btn">View Repo</a>
         `;
         container.appendChild(card);
-      }
-    });
+      });
+    }
   }
-
   renderProjects();
 });
