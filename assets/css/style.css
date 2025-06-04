@@ -169,8 +169,6 @@ header {
   margin-top: 10px;
 }
 
-.nav-links {
-/* Skills Section */
 .skills-section {
   background: var(--box-bg-color);
   padding: 60px 20px;
@@ -361,6 +359,7 @@ color: #ffffff;
   object-fit: cover;
   border: 4px solid var(--nav-primary);
   transition: transform 0.3s ease;
+}
 .experience-container {
   max-width: 800px;
   margin: auto;
