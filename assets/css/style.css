@@ -136,7 +136,10 @@ body {
   text-align: center;
   height: 100vh; /* Ensures full-screen height */
   padding: 20px;
-  columns: #ffffff;
+  color: #ffffff;
+}
+.hero-content h2 {
+   color: #ffffff;
 }
 
 /* Profile Section */
