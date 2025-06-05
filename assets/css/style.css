@@ -303,6 +303,7 @@ h2 {
 .footer {
   text-align: center;
   padding: 20px;
+  margin-top: 20px;
   background: var(--nav-primary);
   color: #ffffff;
 }
